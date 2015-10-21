@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="VictoryDesign | Patrick J" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- for testing -->
+    <script src="./js/mock.js"></script>
+
+    <!-- MDL and Font core CSS files -->
+    <link  rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto" />
+    <link rel="stylesheet" type="text/css" href="./mdl/material.min.css" />
+
+    <!-- custom CSS files -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="./css/fonts.css">
+
+    <!-- the JS stuff -->
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./mdl/material.min.js"></script>
+    <script type="text/javascript" src="./js/ldm-greeter.js"></script>
+
+    <style>
+
+    .username-title > .mdl-card__title {
+        color: #DE000000;
+    }
+
+    </style>
+
+</head>
+
+<body>
+<!-- this is the markup. you can change the details (your own name, your own avatar etc.) but don’t change the basic structure! -->
+<!-- ripple main bg color: #313440 (now #607D8B)-->
+<!-- card bg: #FFB300 -->
+<!-- intro fab color: #FFB300 (now #2979FF) -->
+<!-- intro fab color after transition: #E0E0E0 -->
+
+<section class="section--center profile-card">
+
+    <header>
+
+        <!-- here’s the avatar -->
+        <a href="#">
+            <img src="./profile/profile_image.jpg" />
+        </a>
+
+        <!-- the username -->
+        <div class="mdl-grid">
+            <div class="username-title mdl-grid">
+                <h2 id="user_current" class="mdl-card__title-text">USERNAME</h2>
+                <button id="switch_user" class="mdl-button mdl-button--icon mdl-js-button">
+                    <i class="material-icons">&#xE5C5;</i>
+                </button>
+                <ul id="user-list" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="switch_user">
+                </ul>
+            </div>
+        </div>
+
+        <!-- menu button on the upper right corner -->
+        <div class="mdl-card__menu">
+            <button id="menu_button" class="mdl-button mdl-button--icon mdl-js-button">
+                <i class="material-icons">&#xE5D4;</i>
+            </button>
+
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu_button">
+                <li class="mdl-menu__item" onclick="javascript: lightdm.suspend();">Suspend</li>
+                <li class="mdl-menu__item" onclick="javascript: lightdm.restart();">Restart</li>
+                <li class="mdl-menu__item" onclick="javascript: lightdm.shutdown();">Shutdown</li>
+            </ul>
+        </div>
+
+    </header>
+
+    <!-- the password field -->
+    <div class="profile-bio">
+        <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="password" id="pass" />
+            <label class="mdl-textfield__label" for="pass">Password...</label>
+            <span class="mdl-textfield__error" id="wrongpass">Wrong Password!</span>
+        </div>
+        <div id="session-area">
+            <button id="session-list-btn" class="mdl-button mdl-js-button mdl-js-ripple-effect"></button>
+            <ul id="sessions" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="session-list-btn">
+            </ul>
+        </div>
+    </div>
+
+    <!-- login button and spinner -->
+    <div class="profile-social-links" id="login_button_area">
+        <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="submitPassword()">Login</button>
+    </div>
+
+    <div class="profile-social-links" id="loading_button_area">
+        <div class="mdl-spinner mdl-js-spinner is-active"></div>
+    </div>
+
+</section>
+
+<div id="logArea" class="log"></div>
+</body>
+</html>
