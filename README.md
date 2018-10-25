@@ -1,5 +1,7 @@
 #mdl-lightdm
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/PDDStudio/mdl-lightdm.svg)](https://greenkeeper.io/)
+
 A Material Design inspired Greeter for LightDM Webkit, based on the work of [Victory Design's entry to the Remix Challenge](http://codepen.io/anon/pen/bdxbJM) 
 
 ##Showcase
